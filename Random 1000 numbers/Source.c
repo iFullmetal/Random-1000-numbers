@@ -8,13 +8,13 @@ int randomNumber(int minNum, int maxNum) {
 	int hiNum = 0;
 	if (minNum < maxNum) {
 		lowNum = minNum;
-		hiNum = maxNum + 1;
+		hiNum = maxNum;
 	}
 	else {
-		lowNum = maxNum + 1;
+		lowNum = maxNum;
 		hiNum = minNum;
 	}
-	result = (rand() % (hiNum - lowNum)) + lowNum;
+	result = 1 + (rand() % (hiNum - lowNum)) + lowNum;
 	return result;
 }
 
@@ -24,16 +24,23 @@ void main() {
 	for (int i = 0; i < sizeof(password) / sizeof(password[0]); i++)
 	{
 			password[i] = randomNumber(0, 1000);
-			printf("Random number:");
+			int x;
+			x++;
+			printf("%d", x ,"Random numbers:");
 			printf("%d", password[i]);
 			printf("\n");
-			printf("+20%:");
-			printf("%d", (password[i] * 120)/100);
-			printf("\n");	
+			
+			
 	}
 
 	printf("\n");
 
+	for (int i = 0; i < sizeof(password) / sizeof(password[0]); i++)
+	{
+		printf("+20%:");
+		printf("%d", (password[i] * 120) / 100);
+		printf("\n");
+	}
 	system("pause");
 	return 0;
 }
