@@ -19,24 +19,21 @@ int randomNumber(int minNum, int maxNum) {
 }
 
 void main() {
-	
 	srand(time(NULL));
-				
-	int password[1000];
-
+	int password[50];
 	for (int i = 0; i < sizeof(password) / sizeof(password[0]); i++)
 	{
-			password[i] = randomNumber(48, 57);
+			password[i] = randomNumber(0, 1000);
 			printf("Random number:");
 			printf("%d", password[i]);
 			printf("\n");
 			printf("+20%:");
 			printf("%d", (password[i] * 120)/100);
-			printf("\n");
-			
+			printf("\n");	
 	}
+
 	printf("\n");
+
 	system("pause");
 	return 0;
-
 }
